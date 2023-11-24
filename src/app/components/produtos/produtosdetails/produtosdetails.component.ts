@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 
 import { Produto } from 'src/app/models/produto';
-import { ProdutosService } from 'src/app/services/produtos.service';
+import { ProdutosService } from 'src/app/services/produtos-service';
 
 @Component({
   selector: 'app-produtosdetails',

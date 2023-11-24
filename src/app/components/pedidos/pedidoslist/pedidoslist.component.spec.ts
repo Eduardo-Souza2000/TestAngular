@@ -5,8 +5,9 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { Pedido } from 'src/app/models/pedido';
-import { PedidosService } from 'src/app/services/pedidos.service';
+
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { PedidosService } from 'src/app/services/pedidos-service';
 
 describe('PedidoslistComponent', () => {
   let component: PedidoslistComponent;

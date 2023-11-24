@@ -3,10 +3,10 @@ import { By } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 
 import { PedidosdetailsComponent } from './pedidosdetails.component';
-import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/models/pedido';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { PedidosService } from 'src/app/services/pedidos-service';
 
 describe('PedidosdetailsComponent', () => {
   let component: PedidosdetailsComponent;

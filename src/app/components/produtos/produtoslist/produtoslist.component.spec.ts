@@ -2,10 +2,10 @@ import { ProdutoslistComponent } from './produtoslist.component';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Produto } from 'src/app/models/produto';
-import { ProdutosService } from 'src/app/services/produtos.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ProdutosService } from 'src/app/services/produtos-service';
 
 describe('ProdutoslistComponent', () => {
   let component: ProdutoslistComponent;

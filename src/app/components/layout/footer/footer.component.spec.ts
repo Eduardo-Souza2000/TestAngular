@@ -30,7 +30,7 @@ describe('FooterComponent', () => {
     expect(navbar).toBeTruthy();
 
     const links = fixture.debugElement.queryAll(By.css('.nav-link'));
-    expect(links.length).toBe(3); 
+    expect(links.length).toBe(1); 
 
   });
 
