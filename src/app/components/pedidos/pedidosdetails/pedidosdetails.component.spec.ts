@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 
@@ -34,13 +34,18 @@ describe('PedidosdetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+
   it('deve chamar o método save no envio do formulário', () => {
     const pedido: Pedido = { obs: 'Pedido Teste', produtos: [], id:1 }; 
 
     component.pedido = pedido;
     fixture.detectChanges();
     const form = fixture.debugElement.query(By.css('form'));
-    form.triggerEventHandler('ngSubmit', null);
+    form.triggerEventHandler('submit', null);
+
+    spyOn(PedidosServiceSimulador, 'save');
+    fixture.detectChanges();
 
     expect(PedidosServiceSimulador.save).toHaveBeenCalledWith(pedido);
   });
@@ -52,7 +57,7 @@ describe('PedidosdetailsComponent', () => {
     fixture.detectChanges();
     PedidosServiceSimulador.save.and.returnValue(salvaResultado);
     const form = fixture.debugElement.query(By.css('form'));
-    form.triggerEventHandler('ngSubmit', null);
+    form.triggerEventHandler('submit', null);
 
     expect(component.retorno.emit).toHaveBeenCalledWith(pedido);
   });

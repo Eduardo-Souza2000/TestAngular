@@ -44,7 +44,7 @@ describe('ProdutosdetailsComponent', () => {
     component.produto = product;
     fixture.detectChanges();
     const form = fixture.debugElement.query(By.css('form'));
-    form.triggerEventHandler('ngSubmit', null);
+    form.triggerEventHandler('submit', null);
 
     expect(produtosServiceSimulador.save).toHaveBeenCalledWith(product);
   });
@@ -56,7 +56,7 @@ describe('ProdutosdetailsComponent', () => {
     fixture.detectChanges();
     produtosServiceSimulador.save.and.returnValue(salvaResultado);
     const form = fixture.debugElement.query(By.css('form'));
-    form.triggerEventHandler('ngSubmit', null);
+    form.triggerEventHandler('submit', null);
 
     expect(component.retorno.emit).toHaveBeenCalledWith(product);
   });
